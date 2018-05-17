@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background: url("images/qq_4.jpg");
+            height: 2000px;
+        }
+        .qq{
+            width: 187px;
+            height: 193px;
+            /*border: 1px solid red;*/
+            background: url("images/qq_2.png") no-repeat;
+            background-size:100%; 
+            position: fixed;
+            top: 200px;
+            right: -68px;
+            transform-origin: 50% 50%;
+            transform: rotate(-20deg);
+        }
+        .chat{
+           width: 300px;
+            height: 262px;
+            /*border: 1px solid red;*/
+            background: url(images/qq_3.png) no-repeat;
+            background-size: 100%;
+            position: fixed;
+            top: 200px;
+            right: -300px;
+            padding-top: 20px;
+            padding-left: 20px;
+            box-sizing: border-box;
+            /*display: none;*/
+        }
+        a{
+            color: #0066ff;
+            text-decoration: none;
+            font-size: 15px;
+            display: block;
+            /*margin-bottom: 15px;*/
+        }
+        a img{
+            width: 166px;
+            height: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="qq"></div>
+    <div class="chat">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" target="_blank">技术支持: <img src="images/qq_1.png" align="absmiddle"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=383160947&site=qq&menu=yes">问题解答: <img src="images/qq_1.png" align="absmiddle"></a>
+        <a href="#">客服一号: <img src="images/qq_1.png" align="absmiddle"></a>
+        <a href="#">客服二号: <img src="images/qq_1.png" align="absmiddle"></a>
+        <a href="#">客服三号: <img src="images/qq_1.png" align="absmiddle"></a>
+    </div>
+    <script src="js/jQuery.js"></script>
+    <script>
+        $(".qq").hover(function(){
+            $(this).animate({right:"-187px"},500,function(){
+                $(".chat").animate({right:'0px'},500);
+            });
+           
+        })
+        $(".chat").hover(function(){
+        },function(){
+            $(this).animate({right:"-300px"},500,function(){
+                $(".qq").animate({right:'-68px'},500);
+            });
+        })
+    </script>
+</body>
+</html>
